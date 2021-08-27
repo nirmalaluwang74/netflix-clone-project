@@ -17,9 +17,15 @@ export const Inner = styled.div`
 
 export const Item = styled.div`
     display: flex;
+    color: white;
+    border-bottom: 8px solid #222;
+    padding: 50px 5%;
+    overflow: hidden;
 `;
 
-export const Container = styled.section``;
+export const Container = styled.section`
+    background-color: black;
+`;
 
 export const Title = styled.h1`
     font-size: 50px;
