@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import Home from './pages/home';
 
-// GIT HUB Personal access token // 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
+// GIT HUB Personal access token // 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
+
 
  function App() {
   return (
