@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
+import * as Routes from './constants/routes';
 import Home from './pages/home';
 
 // GIT HUB Personal access token // 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
@@ -10,16 +11,16 @@ import Home from './pages/home';
   return (
     <Router>
         <Switch>
-            <Route path="/signin">
+            <Route path={Routes.signIn}>
                 <p>I will be the sign in page</p>
             </Route>
-            <Route path="/signup">
+            <Route path={Routes.signUp}>
                 <p>I will be the sign up page</p>
             </Route>
-            <Route path="/browse">
+            <Route path={Routes.browse}>
                 <p>I will be the browse page</p>
             </Route>
-            <Route path="/">
+            <Route path={Routes.home}>
                 <Home />
             </Route>
         </Switch>
