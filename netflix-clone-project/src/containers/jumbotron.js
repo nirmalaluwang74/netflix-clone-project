@@ -19,8 +19,6 @@ export function JumbotronContainer() {
                     </Jumbotron.Pane>
                 </Jumbotron>
             ))}
-            <Jumbotron.Title>Hello</Jumbotron.Title>
-            <Jumbotron.SubTitle>Hello</Jumbotron.SubTitle>
         </Jumbotron.Container>
     )
 };
