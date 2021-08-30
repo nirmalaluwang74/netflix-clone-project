@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import * as Routes from './constants/routes';
 import Home from './pages/home';
 
-// GIT HUB Personal access token // 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
+// GIT HUB Personal access token // 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
 
 
  function App() {
