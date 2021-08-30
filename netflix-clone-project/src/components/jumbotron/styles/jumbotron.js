@@ -24,6 +24,7 @@ export const Item = styled.div`
 `;
 
 export const Container = styled.section`
+    z-index: 1;
     background-color: black;
 `;
 

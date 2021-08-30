@@ -2,8 +2,8 @@ import React from 'react';
 import { Link as ReachRouterLink } from 'react-router-dom';
 import { Background, Container, Logo, ButtonLink } from './styles/header';
 
-export default function Header({ bg = true, children, ...restProps }) {
-    return bg ? <Background {...restProps}>{children}</Background> :children;
+export default function Header({ children, ...restProps }) {
+    return <Background {...restProps}>{children}</Background>;
 }
 
 Header.Frame = function HeaderFrame({ children, ...restProps }) {
@@ -18,6 +18,6 @@ Header.Logo = function HeaderLogo({ to, ...restProps }) {
     )
 }
 
-Header.ButtonLink = function HeaderButtonLink(children, ...restProps) {
+Header.ButtonLink = function HeaderButtonLink({children, ...restProps}) {
     return <ButtonLink {...restProps}>{children}</ButtonLink>;
 }
