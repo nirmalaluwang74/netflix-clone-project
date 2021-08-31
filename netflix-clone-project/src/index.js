@@ -6,6 +6,9 @@ import './index.css';
 import App from './App';
 import { FirebaseContext }from './context/firebase';
 import reportWebVitals from './reportWebVitals';
+// import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
+
+// const db = getFirestore(firebaseApp);
 
 const firebaseConfig = {
   apiKey: "AIzaSyAIeLFJBFivavwsZS-aSNYlzvSp0uaYXVY",
