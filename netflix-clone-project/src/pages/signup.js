@@ -1,30 +1,35 @@
 import React, { useState } from 'react';
-import { Form } from '../components';
-import { HeaderContainer } from '../containers/header';
 import { FooterContainer } from '../containers/footer';
+import { HeaderContainer } from '../containers/header';
+import { Form } from '../components';
 
- function Signin() {
-    // const [error, setError] = useState('');
+
+ function Signup() {
+    const [firstName, setFirstName] = useState('');
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
+    // const [error, setError] = useState('');
 
-    const isInvalid = password === '' | emailAddress === '';
+    const isInvalid = firstName === '' || password === '' || emailAddress === '';
 
-    const handleSignin = (event) => {
+    const handleSignup = (event) => {
         event.preventDefault();
     }
-
-    // call in here to firebase to authenticate the user
-        // if there's an error, populate the error state
 
     return (
         <>
             <HeaderContainer>
                 <Form>
-                    <Form.Title>Sign in</Form.Title>
+                    <Form.Title>Sign up</Form.Title>
                     {/* {error && <Form.Error>{error}</Form.Error>} */}
 
-                    <Form.Base onSubmit={handleSignin} method = "POST">
+                    <Form.Base onSubmit={handleSignup} method = "POST">
+
+                        <Form.Input
+                            placeholder="First Name"
+                            value={firstName}
+                            onChange={({ target }) => setFirstName(target.value)}
+                        />
 
                         <Form.Input
                             placeholder="Email address"
@@ -41,12 +46,12 @@ import { FooterContainer } from '../containers/footer';
                         />
 
                         <Form.Submit disabled={isInvalid} type="submit">
-                            Sign in
-                        </Form.Submit>
+                            Sign up
+                        </Form.Submit>  
 
                         <Form.Text>
-                            New to Netflix? <Form.Link to="/signup">Sign up now. </Form.Link>
-                        </Form.Text>
+                            Already a user? <Form.Link to="/signin">Sign up now. </Form.Link>
+                        </Form.Text> 
 
                         <Form.TextSmall>
                             This page is protected by Google reCAPTCHA
@@ -60,4 +65,4 @@ import { FooterContainer } from '../containers/footer';
     )
 }
 
-export default Signin
+export default Signup
