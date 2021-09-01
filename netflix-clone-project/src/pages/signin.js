@@ -7,9 +7,14 @@ import { HeaderContainer } from '../containers/header';
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
 
+    const isInvalid = password === '' | emailAddress === '';
+
     const handleSignin = (event) => {
         event.preventDefault();
     }
+
+    // call in here to firebase to authenticate the user
+        // if there's an error, populate the error state
 
     return (
     
@@ -34,7 +39,7 @@ import { HeaderContainer } from '../containers/header';
                         onChange={({ target }) => setPassword(target.value)}
                     />
 
-                    <Form.Submit disabled={false} type="submit">
+                    <Form.Submit disabled={isInvalid} type="submit">
                         Sign in
                     </Form.Submit>
 
