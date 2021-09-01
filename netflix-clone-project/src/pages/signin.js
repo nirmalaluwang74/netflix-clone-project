@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form } from '../components';
 import { HeaderContainer } from '../containers/header';
+import { FooterContainer } from '../containers/footer';
 
  function Signin() {
     // const [error, setError] = useState('');
@@ -17,7 +18,7 @@ import { HeaderContainer } from '../containers/header';
         // if there's an error, populate the error state
 
     return (
-    
+        <>
         <HeaderContainer>
             <Form>
                 <Form.Title>Sign in</Form.Title>
@@ -54,6 +55,8 @@ import { HeaderContainer } from '../containers/header';
                 </Form.Base>     
             </Form>
         </HeaderContainer>
+        <FooterContainer/>
+        </>
     )
 }
 
