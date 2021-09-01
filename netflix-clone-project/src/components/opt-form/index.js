@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Input, Button, Text, Break } from '../opt-form/styles/opt-form';
-import { } from './styles/opt-form';
 
 const nextArrow = require('/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/icons/arrow-next.png')
 
