@@ -6,7 +6,6 @@ import { Form } from '../components';
 import * as Routes from '../constants/routes';
 import { FirebaseContext } from '../context/firebase';
 
-
  function Signup() {
     const history = useHistory();
     const { firebase } = useContext(FirebaseContext)
@@ -36,10 +35,6 @@ import { FirebaseContext } from '../context/firebase';
                 history.push(Routes.browse);
             })
         ).catch((error) => setError(error.message));
-
-
-
-
     }
 
     return (
