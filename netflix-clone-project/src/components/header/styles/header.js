@@ -13,9 +13,9 @@ export const Background = styled.section`
     z-index : 10;
     
 
-    // @media (max-width: 1100px) {
-    //     background: none;
-    // }
+    @media (max-width: 1100px) {
+        ${({ dontShowOnSmallViewPort }) => dontShowOnSmallViewPort && `background:none;`}
+    }
 `;
 
 export const Container = styled.div`

@@ -13,10 +13,25 @@ export function BrowseContainer() {
         photoURL: "1"
     };
 
-    return profile.displayName ? (
-    
-    <><p>Browse container</p>
-        <FooterContainer />
-     </>)
-     : (<SelectProfileContainer user={user} setProfile={setProfile} />);
-}
+    return profile.displayName ? (  
+        <>
+            <Header src= "joker1">
+                <Header.Frame>
+                    <Header.Group>
+                        <Header.Logo to={Routes.home} src="/src/images/misc/logo.png" alt="Netflix logo"/>
+                        <Header.Textlink 
+                            active={category === 'series' ? true : false }
+                            onClick={() => setCategory('series')}>
+                        </Header.Textlink>
+                        <Header.Textlink
+                            active={category === 'films' ? true : false }
+                            onClick={() => setCategory('films')}>      
+                        </Header.Textlink> 
+                    </Header.Group>
+                </Header.Frame>
+            </Header>
+            <p>Browse container</p>
+                <FooterContainer />
+            </>)
+            : (<SelectProfileContainer user={user} setProfile={setProfile} />);
+    }
