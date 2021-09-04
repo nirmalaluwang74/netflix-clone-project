@@ -19,7 +19,7 @@ export function BrowseContainer() {
 
     return profile.displayName ? (  
         <>
-            <Header src= "joker1">
+            <Header src= "joker1" dontShowOnSmallViewPort>
                 <Header.Frame>
                     <Header.Group>
                         <Header.Logo to={Routes.home} src="/src/images/misc/logo.png" alt="Netflix logo"/>
