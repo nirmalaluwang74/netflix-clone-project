@@ -13,9 +13,9 @@ export const Background = styled.section`
     z-index : 10;
     
 
-    // @media (max-width: 1100px) {
-    //     background: none;
-    // }
+    @media (max-width: 1100px) {
+        ${({ dontShowOnSmallViewPort }) => dontShowOnSmallViewPort && `background:none;`}
+    }
 `;
 
 export const Container = styled.div`
@@ -29,9 +29,26 @@ export const Container = styled.div`
     a {
         display: flex;
     }
+
+    @media (max-width: 1000px) {
+        margin: 0 30px;
+    }
 `;
 
-export const Link = styled.p``;
+export const Link = styled.p`
+    color: #fff;
+    text-decoration: none;
+    margin-right: 30px;
+    font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
+    cursor: pointer;
+
+    &:hover {
+        font-weight: bold;
+    }
+    &:last-of-type {
+        margin-right: 0;
+    }
+`;
 
 export const ButtonLink = styled(ReachRouterLink)`
     display: block;
@@ -62,4 +79,16 @@ export const Logo = styled.img`
         height: 45px;
         width: 167px;
     }
+`;
+
+export const Group = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
+export const Text = styled.p`
+    color: white;
+    font-size: 22px;
+    line-height: normal;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45)
 `;

@@ -5,6 +5,7 @@ import { HeaderContainer } from '../containers/header';
 import { Form } from '../components';
 import * as Routes from '../constants/routes';
 import { FirebaseContext } from '../context/firebase';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
  function Signup() {
     const history = useHistory();
@@ -19,23 +20,39 @@ import { FirebaseContext } from '../context/firebase';
     const handleSignup = (event) => {
         event.preventDefault();
 
-        firebase
-        .auth()
-        .createUserWithEmailAndPassword(emailAddress, password)
-        .then((result) =>
-            result.user
-            .updateProfile({
-                displayName: firstName,
-                photoURL: Math.floor(Math.random() * 5 ) + 1,
+    //     firebase
+    //     .auth()
+    //     .createUserWithEmailAndPassword(emailAddress, password)
+    //     .then((result) =>
+    //         result.user
+    //         .updateProfile({
+    //             displayName: firstName,
+    //             photoURL: Math.floor(Math.random() * 5 ) + 1,
+    //         })
+    //         .then(() => {
+    //             setEmailAddress('');
+    //             setPassword('');
+    //             setError('');
+    //             history.push(Routes.browse);
+    //         })
+    //     ).catch((error) => setError(error.message));
+    // }
+
+            const auth = getAuth();
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
             })
-            .then(() => {
-                setEmailAddress('');
-                setPassword('');
-                setError('');
-                history.push(Routes.browse);
-            })
-        ).catch((error) => setError(error.message));
-    }
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+        }
+
+
+
 
     return (
         <>
