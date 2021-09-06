@@ -5,7 +5,6 @@ import { JumbotronContainer } from '../containers/jumbotron';
 import { FooterContainer }  from '../containers/footer';
 import { HeaderContainer } from '../containers/header';
 
-
  function Home() {
     return (
         <>
