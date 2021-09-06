@@ -4,14 +4,14 @@ import React from 'react';
 import { Header, Profiles } from '../components';
 import * as Routes from '../constants/routes';
 
-export function SelectProfileContainer(user, setProfile) {
+export function SelectProfileContainer({user, setProfile}) {
     return (
         <>
             <Header bg={false}>
                 <Header.Frame>
                     <Header.Logo
                         to={Routes.home}
-                        src="/src/images/misc/logo.png"
+                        src="/src/images/misc/joker 1.jpg"
                         alt="Netflix"
                     />
                     <p>Profile container</p>
@@ -26,7 +26,7 @@ export function SelectProfileContainer(user, setProfile) {
                             photoURL: user.photoURL
                         })}
                     >      
-                        {/* <Profiles.Picture src={user.photoURL} /> */}
+                        <Profiles.Picture src={user.photoURL} />
                         <Profiles.Name>{user.displayName}</Profiles.Name>
                     </Profiles.User>
                 </Profiles.List>
