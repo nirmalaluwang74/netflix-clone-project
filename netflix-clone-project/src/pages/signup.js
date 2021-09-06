@@ -9,13 +9,13 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
  function Signup() {
     const history = useHistory();
-    const { firebase } = useContext(FirebaseContext)
+    // const { firebase } = useContext(FirebaseContext)
     const [firstName, setFirstName] = useState('');
-    const [emailAddress, setEmailAddress] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    const isInvalid = firstName === '' || password === '' || emailAddress === '';
+    const isInvalid = firstName === '' || password === '' || email === '';
 
     const handleSignup = (event) => {
         event.preventDefault();
@@ -52,8 +52,6 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
         }
 
 
-
-
     return (
         <>
             <HeaderContainer>
@@ -71,8 +69,8 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
                         <Form.Input
                             placeholder="Email address"
-                            value={emailAddress}
-                            onChange={({ target }) => setEmailAddress(target.value)}
+                            value={email}
+                            onChange={({ target }) => setEmail(target.value)}
                         />
 
                         <Form.Input

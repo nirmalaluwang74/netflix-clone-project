@@ -5,30 +5,45 @@ import { Form } from '../components';
 import { HeaderContainer } from '../containers/header';
 import { FooterContainer } from '../containers/footer';
 import * as Routes from '../constants/routes';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
  function Signin() {
     const history = useHistory();
-    const { firebase } = useContext(FirebaseContext)
+    // const { firebase } = useContext(FirebaseContext)
     const [error, setError] = useState('');
-    const [emailAddress, setEmailAddress] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const isInvalid = password === '' | emailAddress === '';
+    const isInvalid = password === '' | email === '';
 
     const handleSignin = (event) => {
         event.preventDefault();
         
-        firebase
-            .auth()
-            .signInWithEmailAndPassword(emailAddress, password)
-            .then(() => {
-                setEmailAddress('');
-                setPassword('');
-                setError('');
-                history.push(Routes.browse);
-                })
-            .catch((error) => setError(error.message));
-    }
+    //     firebase
+    //         .auth()
+    //         .signInWithEmailAndPassword(emailAddress, password)
+    //         .then(() => {
+    //             setEmailAddress('');
+    //             setPassword('');
+    //             setError('');
+    //             history.push(Routes.browse);
+    //             })
+    //         .catch((error) => setError(error.message));
+    // }
+
+            const auth = getAuth();
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+        }
+
 
     return (
         <>
@@ -41,8 +56,8 @@ import * as Routes from '../constants/routes';
 
                         <Form.Input
                             placeholder="Email address"
-                            value={emailAddress}
-                            onChange={({ target }) => setEmailAddress(target.value)}
+                            value={email}
+                            onChange={({ target }) => setEmail(target.value)}
                         />
 
                         <Form.Input
