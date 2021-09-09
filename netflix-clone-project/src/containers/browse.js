@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Header } from '../components';
+import { Header, Loading } from '../components';
 import * as Routes from '../constants/routes';
 import { FirebaseContext } from '../context/firebase';
 import { SelectProfileContainer } from './profiles';
@@ -20,6 +20,7 @@ export function BrowseContainer() {
 
     return profile.displayName ? (  
         <>
+        {loading ? <Loading src={user.photoURL} /> : <Loading.ReleaseBody />}
             <Header>
                 <Header.Frame>
                     <Header.Group>
