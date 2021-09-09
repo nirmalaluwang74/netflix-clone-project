@@ -7,9 +7,8 @@ import App from './App';
 import { FirebaseContext }from './context/firebase';
 import reportWebVitals from './reportWebVitals';
 import { } from 'firebase/auth';
-// import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
+import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
 
-// const db = getFirestore(firebaseApp);
 
 const firebaseConfig = {
   apiKey: "AIzaSyAIeLFJBFivavwsZS-aSNYlzvSp0uaYXVY",
@@ -21,8 +20,9 @@ const firebaseConfig = {
   measurementId: "G-6LWKEM7M4P"
 };
 
-
 const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
 
 
 ReactDOM.render(
