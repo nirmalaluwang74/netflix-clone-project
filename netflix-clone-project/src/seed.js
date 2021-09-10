@@ -1,4 +1,5 @@
-export function seedDatabase(firebase) {
+
+ function seedDatabase(firebase) {
     function getUUID() {
       return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
           const piece = (Math.random() * 16) | 0;
@@ -479,4 +480,6 @@ export function seedDatabase(firebase) {
       slug: 'titanic',
     });
   }
+
+  export {seedDatabase}
   
