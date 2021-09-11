@@ -1,15 +1,16 @@
 import React, { useState, useContext } from 'react';
-import { Header, Loading } from '../components';
+import { Card, Header, Loading } from '../components';
 import * as Routes from '../constants/routes';
 import { FirebaseContext } from '../context/firebase';
 import { SelectProfileContainer } from './profiles';
 import { FooterContainer } from './footer';
 
-export function BrowseContainer() {
+export function BrowseContainer({ slides }) {
     const [category, setCategory] = useState('series');
     const [profile, setProfile] = useState({});
     const [loading, setLoading] = useState(true);
-    const [searchTerm, setSearchTerm] = useState('')
+    const [searchTerm, setSearchTerm] = useState('');
+    const [slideRows, setSlideRows] = useState([]);
 
     const { firebase } = useContext(FirebaseContext);
 
@@ -17,6 +18,16 @@ export function BrowseContainer() {
         displayName: "nirmala",
         photoURL: "1"
     };
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        }, 3000);
+    }, [user])
+
+    useEffect(() => {
+        setSlideRows(slides[category]);
+    }, [slides, category]);
 
     return profile.displayName ? (  
         <>
@@ -64,7 +75,29 @@ export function BrowseContainer() {
                     <Header.PlayButton>Play</Header.PlayButton>
                 </Header.Feature>
             </Header>
-            <p>Browse container</p>
+
+
+            <Card.Group>
+                {slideRows.map((slideItem) => (
+                    <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
+                        <Card.Title>{slideItem.title}</Card.Title>
+                        <Card.Entities>
+
+
+                            
+                        </Card.Entities>
+                
+                
+                
+                
+                
+                )}
+
+
+
+
+
+            </Card.Group>
                 <FooterContainer />
             </>)
             : (<SelectProfileContainer user={user} setProfile={setProfile} />);
