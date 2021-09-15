@@ -19,32 +19,21 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
     const handleSignin = (event) => {
         event.preventDefault();
         
-    //     firebase
-    //         .auth()
-    //         .signInWithEmailAndPassword(emailAddress, password)
-    //         .then(() => {
-    //             setEmailAddress('');
-    //             setPassword('');
-    //             setError('');
-    //             history.push(Routes.browse);
-    //             })
-    //         .catch((error) => setError(error.message));
-    // }
-
-            const auth = getAuth();
-            signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in 
-                const user = userCredential.user;
-                // ...
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
+        firebase
+            .auth()
+            .signInWithEmailAndPassword(emailAddress, password)
+            .then(() => {  
+                setError('');
+                history.push(Routes.browse);
+                })
+            .catch((error) => { 
+                setEmailAddress('');
+                setPassword('');
+                setError(error.message);
             });
-        }
-
-
+    }
+          
+    
     return (
         <>
             <HeaderContainer>
