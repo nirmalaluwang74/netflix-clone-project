@@ -9,7 +9,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
  function Signin() {
     const history = useHistory();
-    // const { firebase } = useContext(FirebaseContext)
+    const { firebase } = useContext(FirebaseContext);
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -21,19 +21,18 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
         
         firebase
             .auth()
-            .signInWithEmailAndPassword(emailAddress, password)
+            .signInWithEmailAndPassword(email, password)
             .then(() => {  
                 setError('');
                 history.push(Routes.browse);
                 })
             .catch((error) => { 
-                setEmailAddress('');
+                setEmail('');
                 setPassword('');
                 setError(error.message);
             });
     }
           
-    
     return (
         <>
             <HeaderContainer>

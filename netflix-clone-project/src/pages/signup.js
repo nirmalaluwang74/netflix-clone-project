@@ -7,9 +7,9 @@ import * as Routes from '../constants/routes';
 import { FirebaseContext } from '../context/firebase';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
- function Signup() {
+ export default function Signup() {
     const history = useHistory();
-    // const { firebase } = useContext(FirebaseContext)
+    const { firebase } = useContext(FirebaseContext);
     const [firstName, setFirstName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -20,44 +20,32 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
     const handleSignup = (event) => {
         event.preventDefault();
 
-    //     firebase
-    //     .auth()
-    //     .createUserWithEmailAndPassword(emailAddress, password)
-    //     .then((result) =>
-    //         result.user
-    //         .updateProfile({
-    //             displayName: firstName,
-    //             photoURL: Math.floor(Math.random() * 5 ) + 1,
-    //         })
-    //         .then(() => {
-    //             setEmailAddress('');
-    //             setPassword('');
-    //             setError('');
-    //             history.push(Routes.browse);
-    //         })
-    //     ).catch((error) => setError(error.message));
-    // }
-
-            const auth = getAuth();
-            signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in 
-                const user = userCredential.user;
-                // ...
-            })
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(email, password)
+            .then((result) =>
+                result.user
+                .updateProfile({
+                    displayName: firstName,
+                    photoURL: Math.floor(Math.random() * 5 ) + 1,
+                })
+                .then(() => {         
+                    history.push(Routes.browse);
+                })
+            )
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
+                setEmail('');
+                setPassword('');
+            setError(error.message);
             });
-        }
-
+    };
 
     return (
         <>
             <HeaderContainer>
                 <Form>
                     <Form.Title>Sign up</Form.Title>
-                    {/* {error && <Form.Error>{error}</Form.Error>} */}
+                    {error && <Form.Error>{error}</Form.Error>}
 
                     <Form.Base onSubmit={handleSignup} method = "POST">
 
@@ -96,9 +84,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
                     </Form.Base>     
                 </Form>
             </HeaderContainer>
-            <FooterContainer/>
+            <FooterContainer />
         </>
     )
 }
-
-export default Signup

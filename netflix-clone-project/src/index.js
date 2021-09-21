@@ -4,7 +4,7 @@ import firebase from './firebase';
 import { GlobalStyles } from './global-styles';
 import './index.css';
 import App from './App';
-import { FirebaseContext }from './context/firebase';
+import { FirebaseContext } from './context/firebase';
 
 
 

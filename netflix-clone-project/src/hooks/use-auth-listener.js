@@ -1,4 +1,8 @@
 import { useState, useEffect, useContext } from 'react';
+import * as firebase from "firebase/compat//app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+
 import { FirebaseContext } from '../context/firebase';
 
 export default function useAuthListener() {
