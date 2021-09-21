@@ -1,10 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Fuse from 'fuse.js';
 import { Card, Header, Loading, Player } from '../components';
 import * as Routes from '../constants/routes';
 import { FirebaseContext } from '../context/firebase';
 import { SelectProfileContainer } from './profiles';
 import { FooterContainer } from './footer';
+
 
 export function BrowseContainer({ slides }) {
     const [category, setCategory] = useState('series');
