@@ -71,8 +71,8 @@ export const ButtonLink = styled(ReachRouterLink)`
 
 export const Logo = styled.img`
     height: auto;
-    width: 15%;
-    margin-right: 40px;
+    width: 120px;
+    margin-right: 20px;
 
 
     @media (min-width: 1449px) {
