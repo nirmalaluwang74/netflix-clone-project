@@ -2,15 +2,13 @@ import React from 'react';
 import { Header } from '../components';
 import * as Routes from '../constants/routes';
 
-const logo = require('/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/misc/logo.png')
-const backgroundImage = require('/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/misc/bg-movies.jpg')
 
 export function HeaderContainer({children}) {
     return (
-        <Header src={backgroundImage}>
+        <Header src={require('../images/misc/bg-movies.jpg').default}>
             <Header.Frame>
-                <Header.Logo to={Routes.home} src='../images/misc/logo.png' alt='Netflix'/>
-                <Header.ButtonLink > Sign In </Header.ButtonLink>
+                <Header.Logo to={Routes.home} src={require('../images/misc/logo.png').default} alt='Netflix'/>
+                <Header.ButtonLink to={Routes.signIn}> Sign In </Header.ButtonLink>
             </Header.Frame>
             {children}
         </Header>

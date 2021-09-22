@@ -11,7 +11,7 @@ import { HeaderContainer } from '../containers/header';
             <HeaderContainer>
                 
                     <Feature>
-                        <Feature.Title>Unlimited films, Tv programmes and more</Feature.Title>
+                        <Feature.Title>Unlimited films, TV programmes and more</Feature.Title>
                         <Feature.SubTitle>Watch anywhere. Cancel at any time.</Feature.SubTitle>
                     <OptForm>
                             <OptForm.Input placeholder="Email Address"/>
