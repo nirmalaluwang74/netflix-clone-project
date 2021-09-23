@@ -24,7 +24,7 @@ export default function Card({ children, ...restProps }) {
     const [itemFeature, setItemFeature] = useState(false);
 
     return (
-        <FeatureContext.Provider value={{ }}>
+        <FeatureContext.Provider value={{ showFeature, setShowFeature, itemFeature, setItemFeature }}>
             <Container {...restProps} >{children}</Container>
         </FeatureContext.Provider>
     )
@@ -70,7 +70,11 @@ Card.Item = function CardItem({ item, children, ...restProps }) {
     )
 }
 
-Card.Image = function CardFeature({ children, category, ...restProps }) {
+Card.Image = function CardImage({ ...restProps }) {
+    return <Image {...restProps} />;
+}
+
+Card.Feature = function CardFeature({ children, category, ...restProps }) {
     const { showFeature, itemFeature, setShowFeature } = useContext(FeatureContext);
 
     return showFeature ? (
@@ -79,7 +83,7 @@ Card.Image = function CardFeature({ children, category, ...restProps }) {
                 <FeatureTitle>{itemFeature.title}</FeatureTitle>
                 <FeatureText>{itemFeature.description}</FeatureText>
                 <FeatureClose onClick={() => setShowFeature(false)}>
-                    <img src="/images/icons/close.png" alt="Close" />
+                    <img src={require ("/images/icons/close.png").default} alt="Close" />                
                 </FeatureClose>
 
                 <Group margin="30px 0" flexDirection="row" alignItems="center">
