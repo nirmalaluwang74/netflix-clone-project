@@ -51,7 +51,7 @@ export function BrowseContainer({ slides }) {
             <Header>
                 <Header.Frame>
                     <Header.Group>
-                        <Header.Logo to={Routes.home} src="/src/images/misc/logo.png" alt="Netflix logo"/>
+                        <Header.Logo to={Routes.home} src={require("../images/misc/logo.png").default} alt="Netflix logo"/>
                         <Header.Link 
                             active={category === 'series' ? 'true' : 'false' }
                             onClick={() => setCategory('series')}>
