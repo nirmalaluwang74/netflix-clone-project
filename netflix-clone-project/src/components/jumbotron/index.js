@@ -29,6 +29,4 @@ Jumbotron.Image = function JumbotronImage({...restProps}) {
     return <Image  {...restProps}></Image>;
 }
 
-
-
 export default Jumbotron

@@ -1,4 +1,5 @@
 
+
  export const jumboData =         
  
            [
@@ -10,6 +11,7 @@
                 "alt": "Tiger King on Netflix",
                 "direction": "row"
               },
+
               {
                 "id": 2,
                 "title": "Download your programmes to watch on the go.",
@@ -19,6 +21,7 @@
                 "direction": "row-reverse"
                 
               },
+
               {
                 "id": 3,
                 "title": "Watch everywhere.",
@@ -27,6 +30,6 @@
                 "alt": "Money Heist on Netflix",
                 "direction": "row"
               }
+
             ]
-            
-  
+         

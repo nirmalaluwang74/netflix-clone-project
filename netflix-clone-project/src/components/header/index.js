@@ -37,7 +37,7 @@ Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps 
     return (
         <Search {...restProps}>
             <SearchIcon onClick={() => setSearchActive(!searchActive)}>
-                <img src="/images/icons/search.png" alt="Search" />
+                <img src={require('/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/icons/search-icon.png').default} alt="Search" />
             </SearchIcon>
             <SearchInput
                 value={searchTerm}
@@ -90,7 +90,7 @@ Header.Profile = function HeaderProfile({ children, ...restProps }) {
 }
 
 Header.Picture = function HeaderPicture({ src, ...restProps }) {
-    return <Picture {...restProps} src={`/images/users/${src}.png`}/>
+    return <Picture {...restProps} src={`/images/users/${src}.png`.default}/>
 }
 
 Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
