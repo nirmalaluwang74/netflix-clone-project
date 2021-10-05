@@ -26,7 +26,7 @@ export function FooterContainer() {
                    <Footer.Link href="#">Media Centre</Footer.Link>
                    <Footer.Link href="#">Buy gift cards</Footer.Link>
                    <Footer.Link href="#">Ways to Watch</Footer.Link>
-                   <Footer.Link href="#">Cookie Prederences</Footer.Link>
+                   <Footer.Link href="#">Cookie Preferences</Footer.Link>
                    <Footer.Link href="#">Legal Notices</Footer.Link>
                </Footer.Column>
            </Footer.Row>

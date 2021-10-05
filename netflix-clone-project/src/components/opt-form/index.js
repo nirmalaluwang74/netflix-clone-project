@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Input, Button, Text, Break } from '../opt-form/styles/opt-form';
 
-const nextArrow = require('/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/icons/arrow-next.png')
 
 export default function OptForm({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>;
@@ -14,7 +13,7 @@ OptForm.Input = function OptFormInput({...restProps}) {
 OptForm.Button = function OptFormButton({ children, ...restProps }) {
     return (
         <Button {...restProps}>
-            {children} <img src= {nextArrow} alt= "Try now"/>
+            {children} <img src= {require('/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/icons/arrow-next.png').default} alt= "Try now"/>
         </Button>
     )
 }

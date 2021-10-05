@@ -1,12 +1,8 @@
 import React, { useState, useContext, createContext } from 'react';
 import { Body, Title, Header, Container, Inner, Item, Frame } from './styles/accordian';
 
-const close = require('/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/icons/close.png')
-const add = require('/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/icons/add.png')
-
 
 const ToggleContext = createContext();
-
 
 export default function Accordion({ children, ...restProps }) {
     return (
@@ -21,7 +17,6 @@ Accordion.Frame = function AccordionFrame( { children, ...restProps }) {
     return <Frame {...restProps}>{children}</Frame>
 }
 
-
 Accordion.Item = function AccordionItem( { children, ...restProps }) {
     const [toggleShow, setToggleShow] = useState(false);
 
@@ -32,8 +27,7 @@ Accordion.Item = function AccordionItem( { children, ...restProps }) {
         ) 
 }
 
-Accordion.Title = function AccordionTitle( { children, ...restProps }) {
-      
+Accordion.Title = function AccordionTitle( { children, ...restProps }) {    
     return <Title {...restProps}>{children}</Title>
 }
 
@@ -43,9 +37,9 @@ Accordion.Header = function AccordionHeader( { children, ...restProps }) {
     return (
     <Header onClick={() => setToggleShow(!toggleShow)}{...restProps}>{children}
         {toggleShow ? (
-            <img src={close} alt= "Close"/>
+            <img src={require('/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/icons/close.png').default} alt= "Close"/>
              ) : (
-            <img src={add} alt= "Add"/>
+            <img src={require('/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/icons/add.png').default} alt= "Add"/>
         )}
     </Header>
     )
@@ -55,5 +49,3 @@ Accordion.Body = function AccordionBody( { children, ...restProps }) {
     const { toggleShow } = useContext(ToggleContext);
     return toggleShow ? <Body {...restProps}>{children}</Body> :null;
 }
-
-/* <img src="{require('/images/icons/close.png')}" alt= "Close"/> */
