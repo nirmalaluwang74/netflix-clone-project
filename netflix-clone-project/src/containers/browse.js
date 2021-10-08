@@ -44,7 +44,6 @@ export function BrowseContainer({ slides }) {
     }, [searchTerm])
     
     
-
     return profile.displayName ? (  
         <>
         {loading ? <Loading src={user.photoURL} /> : <Loading.ReleaseBody />}
@@ -99,7 +98,7 @@ export function BrowseContainer({ slides }) {
                         <Card.Entities>
                             {slideItem.data.map((item) => (
                                 <Card.Item key={item.docId} item={item}> 
-                                    <Card.Image src= {require(`../images/${category}/${item.genre}/${item.slug}/small.jpg`).default} />
+                                    <Card.Image src= {require(`../images/${category}/${item.genre}/${item.slug}/small.jpg`)} />
                                     <Card.Meta>
                                         <Card.SubTitle>{item.title}</Card.SubTitle>
                                         <Card.Text>{item.description}</Card.Text>

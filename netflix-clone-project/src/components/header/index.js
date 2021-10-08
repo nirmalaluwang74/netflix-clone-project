@@ -90,11 +90,9 @@ Header.Profile = function HeaderProfile({ children, ...restProps }) {
 }
 
 Header.Picture = function HeaderPicture({ src, ...restProps }) {
-    return <Picture {...restProps} src={`/images/users/${src}.png`.default}/>
+    return <Picture {...restProps} src={require(`/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/users/${src}.png`).default} />;
 }
 
 Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
     return <Dropdown {...restProps}>{children}</Dropdown>;
 }
-
-

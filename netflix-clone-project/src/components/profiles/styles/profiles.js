@@ -36,8 +36,8 @@ export const Name = styled.p`
 `;
 
 export const Picture = styled.img`
-    width: 100%;
-    max-width: 150px;
+    width: 80%;
+    max-width: 100px;
     height: auto;
     border: 3px solid black;
     cursor: pointer;
@@ -62,5 +62,4 @@ export const Item = styled.li`
     &:last-of-type {
         margin-right: 0;
     }
-
 `;

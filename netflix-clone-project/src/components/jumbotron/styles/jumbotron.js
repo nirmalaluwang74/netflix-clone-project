@@ -62,6 +62,7 @@ export const Pane = styled.div`
 
 
 export const Image = styled.img`
-    max-width: 100%;
+    max-width: 90%;
+    margin:5%;
     height: auto;
 `;

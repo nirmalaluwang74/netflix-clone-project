@@ -11,10 +11,9 @@ export function SelectProfileContainer({user, setProfile}) {
                 <Header.Frame>
                     <Header.Logo
                         to={Routes.home}
-                        src={require('/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/misc/joker 1.jpg').default}
+                        src={require('../images/misc/logo.png').default}
                         alt="Netflix"
                     />
-                    <p>Profile container</p>
                 </Header.Frame>
             </Header>
             <Profiles>
