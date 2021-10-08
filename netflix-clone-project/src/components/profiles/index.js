@@ -18,10 +18,10 @@ Profiles.User = function ProfilesUser({ children, ...restProps }) {
 }
 
 Profiles.Picture = function ProfilesPicture({ src, ...restProps }) {
-    return <Picture {...restProps} src={src ? `/images/users/${src}.png` :
-    '/src/images/misc/loading.png'} />;
+    return <Picture {...restProps} src={src ? require(`/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/users/${src}.png`).default : '/home/nirmala/code/nirmalaluwang74/netflix-clone-project/src/images/misc/loading.gif'} />;
 }
 
 Profiles.Name = function ProfilesName({ children, ...restProps }) {
     return <Name {...restProps}>{children}</Name>
 }
+

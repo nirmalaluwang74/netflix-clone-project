@@ -12,8 +12,7 @@ export default function Accordion({ children, ...restProps }) {
     )  
 }
 
-Accordion.Frame = function AccordionFrame( { children, ...restProps }) {
-      
+Accordion.Frame = function AccordionFrame( { children, ...restProps }) {    
     return <Frame {...restProps}>{children}</Frame>
 }
 
